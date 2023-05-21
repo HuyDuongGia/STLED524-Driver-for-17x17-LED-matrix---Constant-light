@@ -1,3 +1,17 @@
+// Arthur: Huy Duong Gia. Borre. Date: 21/05/2023
+// Master thesis: Fourier Ptychography Microscopy with UV and IR light
+// Hardware: Custom drive electronics uses three STLED524 Integrated Chips (IC) to control 289 LEDs arranged in a 17x17 matrix. 
+//           Each STLED524 IC is capable of controlling up to 120 LEDs individually and can adjust the LED current from 0 to 35mA in 256 levels. 
+//           The first IC control the first 119 LEDs, from row 1 to row 7 
+//           The second IC control the second 119 LEDs, from row 8 to row 14
+//           The third IC control the remained 51 LEDs, from row 15 to row 17 
+//           The communication between the microcontroller and the STLED524 ICs is established through the SPI communication protocol. 
+//           An Arduino board is used as the microcontroller to receive commands from the computer and send control commands to the STLED524 ICs
+// Function: Receive commands from computer to
+//           - Turn on the LEDs in 17x17 LED matrix one by one
+//           - Adjust the current through LED from 0 to 35mA in 255 levels
+
+
 #include<SPI.h>
 #include<math.h>
 #include<stdio.h>
